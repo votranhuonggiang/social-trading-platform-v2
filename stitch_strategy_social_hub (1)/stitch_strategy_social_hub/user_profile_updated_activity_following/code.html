@@ -1,0 +1,535 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TradeCore - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#00497d",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#002204",
+                    "on-primary-fixed-variant": "#454749",
+                    "on-background": "#0b1c30",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#000101",
+                    "outline-variant": "#c5c6ca",
+                    "surface-variant": "#d3e4fe",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#1a1c1e",
+                    "tertiary-fixed": "#d1e4ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-container": "#0088e2",
+                    "on-secondary-fixed-variant": "#005313",
+                    "background": "#f8f9ff",
+                    "secondary-fixed-dim": "#78dc77",
+                    "surface-container-high": "#dce9ff",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-low": "#eff4ff",
+                    "primary-fixed": "#e2e2e5",
+                    "secondary-container": "#91f78e",
+                    "primary-fixed-dim": "#c6c6c9",
+                    "secondary-fixed": "#94f990",
+                    "inverse-primary": "#c6c6c9",
+                    "on-primary-fixed": "#1a1c1e",
+                    "secondary": "#006e1c",
+                    "surface-dim": "#cbdbf5",
+                    "on-surface-variant": "#44474a",
+                    "outline": "#75777a",
+                    "tertiary-container": "#001d36",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#838486",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#5d5e61",
+                    "tertiary": "#000102",
+                    "on-tertiary-fixed": "#001d36",
+                    "on-secondary-container": "#00731e",
+                    "inverse-surface": "#213145",
+                    "on-surface": "#0b1c30",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-container": "#e5eeff",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed-dim": "#9ecaff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "xl": "32px",
+                    "base": "4px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Inter"],
+                    "data-mono": ["JetBrains Mono"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "title-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style data-stitch-cursor=""></style><style data-stitch-scroll-lock=""></style></head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 h-full w-64 border-r border-outline-variant bg-surface dark:bg-surface-container flex flex-col h-screen p-4 z-50">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[20px]" data-icon="terminal">terminal</span>
+</div>
+<div>
+<h1 class="text-title-sm font-headline-md text-on-surface dark:text-on-primary-fixed">TradeCore</h1>
+<p class="text-label-caps font-label-caps text-on-surface-variant opacity-70">Pro Terminal</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="text-body-sm font-body-sm">Platform</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="face">face</span>
+<span class="text-body-sm font-body-sm">Agent</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="text-body-sm font-body-sm">Research</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+<span class="text-body-sm font-body-sm">Stocks</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="text-body-sm font-body-sm">Market</span>
+</a>
+<div class="pt-4">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-body-sm font-body-sm">AI Ranking</span>
+</a>
+<div class="ml-4 pl-4 border-l border-outline-variant space-y-1 mt-1">
+<a class="block py-2 text-on-surface-variant hover:text-on-surface text-body-sm" href="#">Strategy Ideas</a>
+<a class="block py-2 px-3 rounded-lg text-on-surface text-body-sm text-on-surface-variant" href="#">Social Feed</a>
+<a class="block py-2 px-3 rounded-lg hover:text-on-surface text-body-sm bg-[#bdf094] font-medium" href="#">Profile</a>
+</div>
+</div>
+</div>
+</nav>
+<div class="mt-auto pt-4 border-t border-outline-variant space-y-1">
+<div class="pt-4 border-t border-outline-variant space-y-1">
+<div class="mb-4 p-3 bg-surface-container-low rounded-lg space-y-3">
+  <div>
+    <p class="text-label-caps text-on-surface-variant mb-1">Tổng tiền credit</p>
+    <p class="text-body-sm font-bold text-on-surface">1.043.250.000 VND</p>
+  </div>
+  <div class="pt-2 border-t border-outline-variant/30">
+    <p class="text-label-caps text-on-surface-variant mb-1">Tổng tiền đã đầu tư</p>
+    <p class="text-body-sm font-bold text-on-surface">842.192.400 VND</p>
+  </div>
+</div><button class="w-full mb-4 py-3 px-4 bg-black text-white rounded-lg font-bold text-body-sm">Upgrade to Pro</button>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-body-sm font-body-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-body-sm font-body-sm">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-surface-bright dark:bg-surface-container-low border-b border-outline-variant flex justify-between items-center px-lg z-40">
+<div class="flex gap-8 items-center h-full">
+<a class="text-on-surface-variant pb-4 font-medium transition-colors hover:text-secondary" href="#">Strategy</a>
+<a class="text-on-surface-variant pb-4 font-medium transition-colors hover:text-secondary" href="#">Social Feed</a>
+<a class="text-secondary border-b-2 border-secondary pb-4 font-bold text-on-surface-variant font-medium transition-colors hover:text-secondary" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-1.5 bg-surface-container border border-outline-variant rounded-full text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Search strategy or users..." type="text">
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-secondary-container px-3 py-1 rounded-full text-on-secondary-container">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<span class="text-label-caps">Market Open</span>
+</div>
+<button class="bg-primary text-on-primary px-4 py-1.5 rounded-lg text-label-caps font-bold">Create Post</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="User Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlwD9DeM9Smp4nSbRiY43LhVmegiS5hRC0Ud1DvW2QFn8-0_oC78HBHtBfG7IqPr4cC6T49vwWzkuo7r-CDj6_t8fLEEarERGG9Vo7gmW5Ce68DtZ0AglPp6YyIuNaKblDEeWe1wf-tVuEsVkEans8Ze74bC4MmQZVpLBFk2dpKla8A57_ulCizzMKQnGbUhIehEvcVchGFf6wSFvxSobcqosu8DzshfCDHt60ADMY8Ncyeyc0f3654jqKlJsQJSPZno6hR-OUKycC">
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-lg bg-surface min-h-[calc(100vh-64px)]">
+<!-- Profile Header Bento -->
+<section class="grid grid-cols-12 gap-gutter mb-xl">
+<!-- User Info Card -->
+<div class="col-span-8 bg-surface-container-lowest p-xl rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex items-start gap-xl">
+<div class="relative">
+<div class="w-32 h-32 rounded-xl overflow-hidden bg-surface-container-highest">
+<img alt="Alex Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw7Y9it5JAefMo9qWfsjVw7gG6r6rm9rYqAd95OyUL2yfT_GGKqB9yWJ3_-paCUqYkz219VLQexnCQIssfh0HL1LOS_-35bZiBpBOILylkwSQECOv8uAbdPmxdkMawtzelZPj2RAgRQVB6GvaQ24hDGrt2szL7SDeQD-aR8Odh1aSBAMwnOYVpTon3pL1bfmVWkc3b_UZv-cm8Cb4W2fKJAOML9djm74H2dpLV4ffn1PH3WqYxiQjxzMHF68jhe5sIgXB861V8xwzx">
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary text-on-secondary p-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Alex Chen</h2>
+<p class="text-body-sm text-on-surface-variant">@alextrades_alpha</p>
+</div>
+<div class="flex gap-2">
+<button class="px-6 py-2 border border-primary text-primary rounded-lg font-bold text-label-caps hover:bg-surface-container transition-colors">Edit Profile</button>
+<button class="p-2 bg-surface-container text-on-surface-variant rounded-lg hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+<p class="mt-4 text-body-md text-on-surface max-w-2xl">Nhà giao dịch định lượng chuyên về các chiến lược tăng trưởng kỹ thuật. Quản lý 4.2 Tỷ VND AUM. Tập trung vào tính minh bạch và phát triển cộng đồng. Chuyên viên phân tích chứng khoán.</p>
+<div class="flex gap-lg mt-6">
+<div class="flex flex-col">
+<span class="text-label-caps text-on-surface-variant">Followers</span>
+<span class="text-title-sm font-bold">12.4K</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps text-on-surface-variant">Following</span>
+<span class="text-title-sm font-bold">482</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps text-on-surface-variant">Win Rate</span>
+<span class="text-title-sm font-bold text-secondary">68.2%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Stats Card -->
+<div class="col-span-4 grid grid-rows-2 gap-gutter">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<span class="text-label-caps text-on-surface-variant">Net Liquid Value</span>
+<h3 class="text-title-sm font-data-mono">842.192.400 VND</h3>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+</div>
+<div>
+<span class="text-label-caps text-on-surface-variant">Monthly P&amp;L</span>
+<h3 class="text-title-sm font-data-mono text-secondary">+42.019.120 VND</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Dashboard Area -->
+<div class="flex gap-8 border-b border-outline-variant mb-lg px-2">
+<a class="pb-3 text-body-md font-medium text-on-surface-variant hover:text-on-surface transition-colors relative" href="#">
+    Post
+  </a>
+<a class="pb-3 text-body-md font-bold text-secondary border-b-2 border-secondary relative" href="#">
+    Portfolio
+  </a>
+</div><div class="grid grid-cols-12 gap-gutter">
+<!-- Personal Performance Chart -->
+<div class="col-span-8 bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="text-title-sm font-title-sm">Equity Growth</h3>
+<div class="flex gap-2 bg-surface-container p-1 rounded-lg">
+<button class="px-3 py-1 text-label-caps rounded-md bg-surface-bright shadow-sm">1W</button>
+<button class="px-3 py-1 text-label-caps rounded-md hover:bg-surface-bright transition-colors">1M</button>
+<button class="px-3 py-1 text-label-caps rounded-md hover:bg-surface-bright transition-colors">3M</button>
+<button class="px-3 py-1 text-label-caps rounded-md hover:bg-surface-bright transition-colors">ALL</button>
+</div>
+</div>
+<!-- Placeholder for Chart -->
+<div class="h-64 bg-surface-container-low rounded-lg relative overflow-hidden flex items-end">
+<svg class="w-full h-full" viewBox="0 0 800 200">
+<path d="M0,180 Q100,160 200,170 T400,120 T600,80 T800,40" fill="none" stroke="#006e1c" stroke-width="4"></path>
+<path d="M0,180 Q100,160 200,170 T400,120 T600,80 T800,40 V200 H0 Z" fill="url(#gradient-chart)" opacity="0.1"></path>
+<defs>
+<linearGradient id="gradient-chart" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#006e1c"></stop>
+<stop offset="100%" stop-color="#ffffff"></stop>
+</linearGradient>
+</defs>
+</svg>
+<div class="absolute inset-0 grid grid-cols-8 pointer-events-none opacity-20">
+<div class="border-r border-outline-variant"></div>
+<div class="border-r border-outline-variant"></div>
+<div class="border-r border-outline-variant"></div>
+<div class="border-r border-outline-variant"></div>
+<div class="border-r border-outline-variant"></div>
+<div class="border-r border-outline-variant"></div>
+<div class="border-r border-outline-variant"></div>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-md mt-lg">
+<div class="p-md rounded-lg bg-surface-bright border border-outline-variant">
+<p class="text-label-caps text-on-surface-variant">Drawdown</p>
+<p class="text-body-md font-bold text-error">4.2%</p>
+</div>
+<div class="p-md rounded-lg bg-surface-bright border border-outline-variant">
+<p class="text-label-caps text-on-surface-variant">Sharpe Ratio</p>
+<p class="text-body-md font-bold">2.4</p>
+</div>
+<div class="p-md rounded-lg bg-surface-bright border border-outline-variant">
+<p class="text-label-caps text-on-surface-variant">Avg. Trade</p>
+<p class="text-body-md font-bold text-secondary">+1.420.000 VND</p>
+</div>
+<div class="p-md rounded-lg bg-surface-bright border border-outline-variant">
+<p class="text-label-caps text-on-surface-variant">Volatility</p>
+<p class="text-body-md font-bold">12%</p>
+</div>
+</div>
+</div>
+<!-- Followed Strategies -->
+<div class="col-span-4 bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="text-title-sm font-title-sm">Following Strategies</h3>
+<button class="text-secondary text-label-caps font-bold">View All</button>
+</div>
+<div class="space-y-4">
+<div class="p-md border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="text-body-md font-bold group-hover:text-secondary transition-colors">VND Index Momentum</h4>
+<span class="text-label-caps text-on-surface-variant">AUM: 12 Tỷ VND</span>
+</div>
+<span class="text-secondary font-data-mono font-bold">+18.4%</span>
+</div>
+<div class="h-8 w-full bg-surface-variant/30 rounded-md overflow-hidden flex items-end">
+<svg class="w-full h-4" viewBox="0 0 200 40">
+<path d="M0,35 L20,30 L40,32 L60,10 L80,25 L100,5 L120,20 L140,8 L160,15 L180,5 L200,10" fill="none" stroke="#006e1c" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex justify-between items-center mt-3">
+<span class="text-label-caps text-on-surface-variant">AUM: 12 Tỷ VND</span>
+</div>
+</div>
+<div class="p-md border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="text-body-md font-bold group-hover:text-secondary transition-colors">VND Index Momentum</h4>
+<span class="text-label-caps text-on-surface-variant">AUM: 45 Tỷ VND</span>
+</div>
+<span class="text-secondary font-data-mono font-bold">+12.1%</span>
+</div>
+<div class="h-8 w-full bg-surface-variant/30 rounded-md overflow-hidden flex items-end">
+<svg class="w-full h-4" viewBox="0 0 200 40">
+<path d="M0,35 L30,25 L60,30 L90,15 L120,20 L150,10 L180,12 L200,5" fill="none" stroke="#006e1c" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex justify-between items-center mt-3">
+<span class="text-label-caps text-on-surface-variant">AUM: 45 Tỷ VND</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Full Width Activity Section -->
+<div class="col-span-12 mt-gutter">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<h3 class="text-title-sm font-title-sm mb-lg">Recent Activity</h3>
+<div class="overflow-x-auto">
+<table class="w-full">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="text-left py-3 px-4 text-label-caps font-bold">Type</th>
+<th class="text-left py-3 px-4 text-label-caps font-bold">Asset</th>
+<th class="text-left py-3 px-4 text-label-caps font-bold">Strategy</th>
+<th class="text-right py-3 px-4 text-label-caps font-bold">Amount</th>
+<th class="text-right py-3 px-4 text-label-caps font-bold">Result</th>
+<th class="text-right py-3 px-4 text-label-caps font-bold">Date</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-4 px-4 text-body-sm font-bold text-secondary">BUY</td>
+<td class="py-4 px-4 text-body-sm">HPG</td>
+<td class="py-4 px-4 text-body-sm italic text-on-surface-variant">Weekly_Fundamental</td>
+<td class="py-4 px-4 text-right font-data-mono">120 Shares</td>
+<td class="py-4 px-4 text-right text-secondary font-bold">PENDING</td>
+<td class="py-4 px-4 text-right text-on-surface-variant text-body-sm">Oct 24, 2024</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-4 px-4 text-body-sm font-bold text-error">SELL</td>
+<td class="py-4 px-4 text-body-sm">VCB</td>
+<td class="py-4 px-4 text-body-sm italic text-on-surface-variant">Momentum_Tech</td>
+<td class="py-4 px-4 text-right font-data-mono">50 Shares</td>
+<td class="py-4 px-4 text-right text-secondary font-bold">+2.480.000 VND</td>
+<td class="py-4 px-4 text-right text-on-surface-variant text-body-sm">Oct 23, 2024</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-4 px-4 text-body-sm font-bold text-secondary">BUY</td>
+<td class="py-4 px-4 text-body-sm">FPT</td>
+<td class="py-4 px-4 text-body-sm italic text-on-surface-variant">VND Index Momentum</td>
+<td class="py-4 px-4 text-right font-data-mono">200 Shares</td>
+<td class="py-4 px-4 text-right text-error font-bold">-1.120.000 VND</td>
+<td class="py-4 px-4 text-right text-on-surface-variant text-body-sm">Oct 22, 2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Strategy List Section -->
+<div class="col-span-12 mt-gutter">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<h3 class="text-title-sm font-title-sm mb-lg">Danh sách các chiến lược</h3>
+<div class="overflow-x-auto">
+<table class="w-full">
+<thead>
+<tr class="text-on-surface-variant text-label-caps border-b border-outline-variant">
+<th class="text-left py-4 px-4 font-bold flex items-center gap-1">Universe <span class="material-symbols-outlined text-[16px]" data-icon="unfold_more">unfold_more</span></th>
+<th class="text-left py-4 px-4 font-bold">Chiến lược <span class="material-symbols-outlined text-[16px]" data-icon="unfold_more">unfold_more</span></th>
+<th class="text-left py-4 px-4 font-bold">Tần suất <span class="material-symbols-outlined text-[16px]" data-icon="unfold_more">unfold_more</span></th>
+<th class="text-right py-4 px-4 font-bold">Lợi nhuận <span class="material-symbols-outlined text-[16px]" data-icon="unfold_more">unfold_more</span></th>
+<th class="text-right py-4 px-4 font-bold">YTD <span class="material-symbols-outlined text-[16px]" data-icon="unfold_more">unfold_more</span></th>
+<th class="text-right py-4 px-4 font-bold">Sharpe <span class="material-symbols-outlined text-[16px]" data-icon="unfold_more">unfold_more</span></th>
+<th class="text-right py-4 px-4 font-bold">Độ biến động <span class="material-symbols-outlined text-[16px]" data-icon="unfold_more">unfold_more</span></th>
+<th class="text-right py-4 px-4 font-bold">Credit <span class="material-symbols-outlined text-[16px]" data-icon="unfold_more">unfold_more</span></th>
+<th class="text-center py-4 px-4 font-bold">Trạng thái <span class="material-symbols-outlined text-[16px]" data-icon="unfold_more">unfold_more</span></th>
+<th class="py-4 px-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-4">
+<span class="bg-surface-container px-2 py-1 rounded text-[11px] font-bold">3 sàn vốn...</span>
+</td>
+<td class="py-4 px-4 font-bold">Weekly_Fundamental</td>
+<td class="py-4 px-4 text-body-sm">Hàng tuần</td>
+<td class="py-4 px-4 text-right font-bold text-secondary">55.3%</td>
+<td class="py-4 px-4 text-right font-bold text-secondary">3.7%</td>
+<td class="py-4 px-4 text-right font-bold">1.73</td>
+<td class="py-4 px-4 text-right font-bold text-error">25.5%</td>
+<td class="py-4 px-4 text-right font-bold font-data-mono">43.25Tr</td>
+<td class="py-4 px-4 text-center">
+<span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-[11px] font-bold uppercase">Selling</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex gap-2 justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-[20px]" data-icon="push_pin">push_pin</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-[20px]" data-icon="upload">upload</span>
+<span class="material-symbols-outlined text-error cursor-pointer text-[20px]" data-icon="delete">delete</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-4">
+<span class="bg-surface-container px-2 py-1 rounded text-[11px] font-bold">3 sàn vốn...</span>
+</td>
+<td class="py-4 px-4 font-bold">Momentum_Tech</td>
+<td class="py-4 px-4 text-body-sm">Hàng tuần</td>
+<td class="py-4 px-4 text-right font-bold text-secondary">+2.480.000 VND</td>
+<td class="py-4 px-4 text-right font-bold text-error">-6.8%</td>
+<td class="py-4 px-4 text-right font-bold">1.28</td>
+<td class="py-4 px-4 text-right font-bold text-error">29.3%</td>
+<td class="py-4 px-4 text-right text-on-surface-variant font-bold">-</td>
+<td class="py-4 px-4 text-center">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[11px] font-bold uppercase">Public</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex gap-2 justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-[20px]" data-icon="push_pin">push_pin</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-[20px]" data-icon="upload">upload</span>
+<span class="material-symbols-outlined text-error cursor-pointer text-[20px]" data-icon="delete">delete</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-4">
+<span class="bg-surface-container px-2 py-1 rounded text-[11px] font-bold">VN100</span>
+</td>
+<td class="py-4 px-4 font-bold">Alpha_Growth</td>
+<td class="py-4 px-4 text-body-sm">Hàng tuần</td>
+<td class="py-4 px-4 text-right font-bold text-secondary">-1.120.000 VND</td>
+<td class="py-4 px-4 text-right font-bold text-secondary">4.5%</td>
+<td class="py-4 px-4 text-right font-bold">1.16</td>
+<td class="py-4 px-4 text-right font-bold text-error">28.5%</td>
+<td class="py-4 px-4 text-right text-on-surface-variant font-bold">-</td>
+<td class="py-4 px-4 text-center">
+<span class="bg-outline-variant/20 text-on-surface-variant px-3 py-1 rounded-full text-[11px] font-bold uppercase">Private</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex gap-2 justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-[20px]" data-icon="push_pin">push_pin</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-[20px]" data-icon="upload">upload</span>
+<span class="material-symbols-outlined text-error cursor-pointer text-[20px]" data-icon="delete">delete</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="ml-64 bg-surface-container-lowest dark:bg-surface-container-low border-t border-outline-variant flex justify-between items-center px-lg py-md w-full">
+<div class="flex items-center gap-6">
+<span class="text-label-caps font-bold text-primary">TradeCore</span>
+<div class="flex gap-4">
+<a class="text-on-surface-variant text-body-sm hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant text-body-sm hover:text-on-surface transition-colors" href="#">Risk Disclosure</a>
+<a class="text-on-surface-variant text-body-sm hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant text-body-sm hover:text-on-surface transition-colors" href="#">Help Center</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="public">public</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<p class="text-body-sm text-on-surface-variant opacity-70">© 2024 TradeCore Inc.</p>
+</div>
+</footer>
+
+
+</body></html>

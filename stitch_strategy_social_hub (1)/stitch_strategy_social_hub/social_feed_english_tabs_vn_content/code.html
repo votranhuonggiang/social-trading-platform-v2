@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TradeCore - Bảng tin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "primary-fixed-dim": "#c6c6c9",
+                        "on-primary-container": "#838486",
+                        "inverse-primary": "#c6c6c9",
+                        "secondary-fixed": "#94f990",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#001d36",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary-fixed": "#d1e4ff",
+                        "error": "#ba1a1a",
+                        "outline": "#75777a",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006e1c",
+                        "surface-container": "#e5eeff",
+                        "on-surface-variant": "#44474a",
+                        "secondary-container": "#91f78e",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#005313",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary": "#000102",
+                        "primary": "#000101",
+                        "surface-dim": "#cbdbf5",
+                        "on-background": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#1a1c1e",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#00497d",
+                        "primary-container": "#1a1c1e",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-fixed": "#002204",
+                        "secondary-fixed-dim": "#78dc77",
+                        "on-secondary-container": "#00731e",
+                        "primary-fixed": "#e2e2e5",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-variant": "#d3e4fe",
+                        "surface-tint": "#5d5e61",
+                        "surface": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#0088e2",
+                        "outline-variant": "#c5c6ca",
+                        "on-tertiary-fixed": "#001d36",
+                        "on-primary-fixed-variant": "#454749",
+                        "tertiary-fixed-dim": "#9ecaff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "xs": "4px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "title-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "data-mono": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .shadow-level-1 { box-shadow: 0px 4px 20px rgba(0,0,0,0.05); }
+        .shadow-level-2 { box-shadow: 0px 8px 30px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-hidden">
+<!-- SideNavBar -->
+<nav class="fixed docked left-0 h-full w-64 border-r border-outline-variant bg-surface dark:bg-surface-container flex flex-col p-4 z-20">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+</div>
+<div><h1 class="text-title-sm font-headline-md text-[#1a1c1e] dark:text-on-primary-fixed">TradeCore</h1>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Pro Terminal</p></div>
+</div>
+<div class="flex-1 overflow-y-auto space-y-1"><!-- Platform -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface rounded-lg px-3 py-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-body-sm font-body-sm">Platform</span>
+</a>
+<!-- Agent -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface rounded-lg px-3 py-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="text-body-sm font-body-sm">Agent</span>
+</a>
+<!-- Research -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface rounded-lg px-3 py-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-body-sm font-body-sm">Research</span>
+</a>
+<!-- Stocks -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface rounded-lg px-3 py-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">show_chart</span>
+<span class="text-body-sm font-body-sm">Stocks</span>
+</a>
+<!-- Market -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface rounded-lg px-3 py-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="text-body-sm font-body-sm">Market</span>
+</a>
+<!-- AI Ranking Section -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface rounded-lg px-3 py-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="text-body-sm font-body-sm">AI Ranking</span>
+</a></div>
+<div class="mt-auto space-y-1 pt-4 border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary text-body-sm font-body-sm py-2 rounded-lg font-bold hover:opacity-90 transition-opacity">Upgrade to Pro</button>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface rounded-lg px-3 py-2 mt-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-body-sm font-body-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface rounded-lg px-3 py-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-body-sm font-body-sm">Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="ml-64 flex flex-col h-screen">
+<!-- TopNavBar -->
+<header class="docked top-0 w-full border-b border-outline-variant bg-surface-bright dark:bg-surface-container-low flex justify-between items-center px-lg h-16 z-10">
+<div class="flex items-center gap-8 h-full pt-4"><a class="text-on-surface-variant pb-4 font-medium text-label-caps hover:text-secondary transition-colors" href="#">Strategy</a>
+<a class="text-secondary border-b-2 border-secondary pb-4 font-bold text-label-caps" href="#">Social Feed</a>
+<a class="text-on-surface-variant pb-4 font-medium text-label-caps hover:text-secondary transition-colors" href="#">Profile</a></div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="pl-9 pr-3 py-1.5 bg-surface-container rounded-full text-body-sm font-body-sm border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary outline-none w-48" placeholder="Tìm kiếm..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a young male trader with short dark hair, wearing a crisp white collared shirt against a neutral gray background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAck7FqTTmjq_dYbyLfctew_QtmqOQjY5D145922WqfHD_N1iA0waXe9Q9UupsrNmzXtYfQkjsCboNPRmLH37HUNP0pnsIktfrX6vRFgaKRPUE2Rj0S-rEK0UUcyd472CDIyKaKAms4R35XNN9_kqtGn0ajprZtX9MAsfValMDpT1HAmk1YShNg2YMLgO1kF6Qv3_2nK3DUcNRd9NauK4ePOJiSdZ5nQYtiN6ymkmjQMA-ew_31-c6n-ti0laXUfALEMSZ6HU6hkipE"/>
+</div>
+<button class="bg-primary text-on-primary text-body-sm font-body-sm px-4 py-1.5 rounded-full font-semibold hover:opacity-90 transition-opacity">Create Post</button>
+</div>
+</header>
+<!-- Feed Layout -->
+<main class="flex-1 overflow-y-auto bg-background p-lg flex gap-lg">
+<!-- Left Column: Feed (70%) -->
+<div class="w-[70%] flex flex-col gap-lg">
+<!-- Sub-tabs -->
+<div class="flex gap-4 border-b border-outline-variant">
+<button class="text-primary font-bold text-body-sm font-body-sm border-b-2 border-primary pb-2">News</button>
+<button class="text-on-surface-variant font-medium text-body-sm font-body-sm pb-2 hover:text-primary transition-colors">Portfolios</button>
+</div>
+<!-- Post 1: Rebalance -->
+<div class="bg-surface-container-lowest rounded-xl shadow-level-1 p-lg border border-outline-variant">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-body-md font-bold">AI Portfolio Analysis</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-1.5 py-0.5 rounded font-bold uppercase">Generated</span>
+</div>
+<span class="text-body-sm text-on-surface-variant">Vừa cập nhật • Chiến lược Alpha VN</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="text-label-caps">Optimized</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 mb-4 border-l-4 border-secondary">
+<p class="text-body-sm italic text-on-surface-variant mb-2">"Phân tích AI cho thấy sự chuyển dịch vốn hiệu quả sang nhóm công nghệ để đón đầu sóng AI toàn cầu."</p>
+<div class="flex gap-4 mt-3">
+<div class="flex-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Đánh giá</p>
+<p class="text-body-md font-bold text-secondary">Tích cực (Strong Buy)</p>
+</div>
+<div class="flex-1 border-l border-outline-variant pl-4">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Rủi ro</p>
+<p class="text-body-md font-bold">Thấp</p>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-lg border border-outline-variant p-4 mb-4">
+<h4 class="text-label-caps font-label-caps text-on-surface-variant mb-3">Thay đổi danh mục trọng yếu</h4>
+<div class="space-y-2">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/50">
+<div class="flex items-center gap-2">
+<span class="text-[#F44336] font-bold text-data-mono">-4.5%</span>
+<span class="text-body-sm font-bold">HPG</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">arrow_right_alt</span>
+<div class="flex items-center gap-2">
+<span class="text-[#4CAF50] font-bold text-data-mono">+4.5%</span>
+<span class="text-body-sm font-bold">VCB</span>
+</div>
+</div>
+<div class="flex justify-between items-center py-2">
+<div class="flex items-center gap-2">
+<span class="text-[#F44336] font-bold text-data-mono">-2.0%</span>
+<span class="text-body-sm font-bold">VIC</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">arrow_right_alt</span>
+<div class="flex items-center gap-2">
+<span class="text-[#4CAF50] font-bold text-data-mono">+2.0%</span>
+<span class="text-body-sm font-bold">FPT</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6 pt-2">
+<button class="text-secondary text-body-sm font-bold hover:underline">Xem chi tiết phân tích AI</button>
+</div>
+</div>
+<!-- Post 2: Market Analysis -->
+<div class="bg-surface-container-lowest rounded-xl shadow-level-1 p-lg border border-outline-variant">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full" data-alt="A profile picture of an older male market veteran" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4_NDXbFvdKAiPeAQ2nJeussde4s-0fEfDOhqR6QhgT0igRhhZFMsgheaLJxmxYZz4AVLQ4yIChZ7xzOKiBveD2BNf-MAmmHi3QBqsJpft_3rf0FuQ23z9PqdA_oCAGWw_6NRZjD5pTTkgar0I4uCiBJHXQY3c3O8U7HrB9oE9u8peE1dG5MP4c2xD57gLMNmuz7Os23LHbLkTdjRDZLChFJX2hPZZ-Di9cBCCbQ25pBYnVr8lTxILUdLcn2BikXP283XWPXzGbCec"/>
+<div>
+<div class="flex items-center gap-1">
+<span class="text-body-md font-bold">Trần Văn Nam</span>
+<span class="bg-surface-container-highest text-primary text-[10px] px-1.5 py-0.5 rounded font-bold uppercase">Pro</span>
+</div>
+<span class="text-body-sm text-on-surface-variant">5 giờ trước • Phân tích Thị trường</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-body-md mb-4">Chỉ số VN-Index đang kiểm soát ngưỡng kháng cự quan trọng tại 1.280. Thanh khoản sụt giảm trong nhịp tăng điểm cho thấy khả năng sẽ có một đợt điều chỉnh ngắn hạn trước khi bứt phá. Cần theo dõi sát nhóm Ngân hàng.</p>
+<!-- Interactions -->
+<div class="flex items-center gap-6 pt-2 border-t border-outline-variant/50">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-secondary transition-colors text-body-sm">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+<span class="">89</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors text-body-sm">
+<span class="material-symbols-outlined text-[20px]">chat_bubble_outline</span>
+<span class="">15</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors text-body-sm">
+<span class="material-symbols-outlined text-[20px]">repeat</span>
+<span class="">4</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Leaderboards (30%) -->
+<div class="w-[30%] flex flex-col gap-lg">
+<!-- Top 10 Best Performance -->
+<div class="bg-surface-container-lowest rounded-xl shadow-level-1 border border-outline-variant overflow-hidden">
+<div class="bg-surface-container-low px-4 py-3 border-b border-outline-variant">
+<h3 class="text-title-sm font-title-sm">Hiệu suất Tốt nhất</h3>
+</div>
+<div class="p-2 space-y-1"><!-- Trader 1 -->
+<div class="flex items-center justify-between p-2 hover:bg-surface-container-high rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-bold text-primary w-4 text-center">1</span>
+<img alt="Avatar" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3NzEhD65t-TnsZH4Y3IJ85MG9dlDwNhY6ybIsqcekU4kTbtyRCPo4EV_2Rxp7sekqdJRM64kiVCz2xGuit96_Yr9H-N-7ANq5PLLyeg9f0JJ2GaoYsJJPMnVxH0Dr0SiAWh8AEC7P-nyLl8-B9bR7FmZxuYTIyKXj_7Vs08XhRdF2-Skc2ecWHH7QwkOcgXqFbdOarK99g1DG0XA-kwKl9NEGW9rjc1I2kYgx0VcWHlhXsLY5emqnAGqqBnd82CysH8eAfLmATsDQ"/>
+<div>
+<div class="text-body-sm font-bold">Elena Rostova</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Chiến lược VN30</div>
+</div>
+</div>
+<span class="text-[#4CAF50] font-bold text-data-mono">+24.5%</span>
+</div>
+<!-- Trader 2 -->
+<div class="flex items-center justify-between p-2 hover:bg-surface-container-high rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-bold text-primary w-4 text-center">2</span>
+<img alt="Avatar" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMVITfglRtjbuH85N4m03DutmqbcGyDG9AQKwN4NFF6Qe_Gz2ZiGxQ9cgnDEAEJUa6RPjJFSzhvU-qM9QdFxbCdAl5vW7Y15C16slhjQB_hdRkiw8J6Kp3a6bUX0Gq4uzt6DENdJd8hF6pTeAOEyxdRVmtl2FxAcWb95E5f592W826GeyL7GWMBPJHalesm97g2VAxi2qVFOQ__y9B9hTSllR4eiECO6smlmrICQsaaX50xTDYnsAzHNjmNI2xhDeDfSlsJXsgKGk3"/>
+<div>
+<div class="text-body-sm font-bold">Linh Lê</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Tăng trưởng Alpha</div>
+</div>
+</div>
+<span class="text-[#4CAF50] font-bold text-data-mono">+18.2%</span>
+</div>
+<!-- Trader 3 -->
+<div class="flex items-center justify-between p-2 hover:bg-surface-container-high rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-bold text-primary w-4 text-center">3</span>
+<img alt="Avatar" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4_NDXbFvdKAiPeAQ2nJeussde4s-0fEfDOhqR6QhgT0igRhhZFMsgheaLJxmxYZz4AVLQ4yIChZ7xzOKiBveD2BNf-MAmmHi3QBqsJpft_3rf0FuQ23z9PqdA_oCAGWw_6NRZjD5pTTkgar0I4uCiBJHXQY3c3O8U7HrB9oE9u8peE1dG5MP4c2xD57gLMNmuz7Os23LHbLkTdjRDZLChFJX2hPZZ-Di9cBCCbQ25pBYnVr8lTxILUdLcn2BikXP283XWPXzGbCec"/>
+<div>
+<div class="text-body-sm font-bold">Trần Văn Nam</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Cổ tức Bền vững</div>
+</div>
+</div>
+<span class="text-[#4CAF50] font-bold text-data-mono">+12.8%</span>
+</div>
+<button class="w-full text-center text-secondary text-body-sm font-semibold py-2 hover:underline">Xem tất cả chuyên gia</button>
+</div>
+</div>
+<!-- Top 10 Copy Trading -->
+<div class="bg-surface-container-lowest rounded-xl shadow-level-1 border border-outline-variant overflow-hidden">
+<div class="bg-surface-container-low px-4 py-3 border-b border-outline-variant">
+<h3 class="text-title-sm font-title-sm">Sao chép Giao dịch</h3>
+</div>
+<div class="p-2 space-y-1">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-2 hover:bg-surface-container-high rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-bold text-primary w-4 text-center">1</span>
+<div>
+<div class="text-body-sm font-bold">Nguyễn Hoàng Nam</div>
+<div class="text-[10px] text-on-surface-variant">1.240 Người sao chép</div>
+</div>
+</div>
+<span class="text-primary font-bold text-data-mono">105 Tỷ VND AUM</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-2 hover:bg-surface-container-high rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-bold text-primary w-4 text-center">2</span>
+<div>
+<div class="text-body-sm font-bold">Phạm Diệu Linh</div>
+<div class="text-[10px] text-on-surface-variant">985 Người sao chép</div>
+</div>
+</div>
+<span class="text-primary font-bold text-data-mono">70 Tỷ VND AUM</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-2 hover:bg-surface-container-high rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-bold text-primary w-4 text-center">3</span>
+<div>
+<div class="text-body-sm font-bold">Lê Thu Trang</div>
+<div class="text-[10px] text-on-surface-variant">850 Người sao chép</div>
+</div>
+</div>
+<span class="text-primary font-bold text-data-mono">38 Tỷ VND AUM</span>
+</div>
+<button class="w-full text-center text-secondary text-body-sm font-semibold py-2 hover:underline">Chiến lược</button>
+</div>
+</div>
+<!-- Top 10 Average PNL of Copy Traders -->
+<div class="bg-surface-container-lowest rounded-xl shadow-level-1 border border-outline-variant overflow-hidden">
+<div class="bg-surface-container-low px-4 py-3 border-b border-outline-variant">
+<h3 class="text-title-sm font-title-sm">PNL Trung bình Sao chép</h3>
+</div>
+<div class="p-2 space-y-1">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-2 hover:bg-surface-container-high rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-bold text-primary w-4 text-center">1</span>
+<div>
+<div class="text-body-sm font-bold">Quang Huy</div>
+<div class="text-[10px] text-on-surface-variant">420 Người sao chép</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-secondary bg-secondary-container/30 px-1 rounded text-[10px] font-bold">PNL</span>
+<span class="text-[#4CAF50] font-bold text-data-mono">+15.4%</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-2 hover:bg-surface-container-high rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-bold text-primary w-4 text-center">2</span>
+<div>
+<div class="text-body-sm font-bold">Minh Châu</div>
+<div class="text-[10px] text-on-surface-variant">315 Người sao chép</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-secondary bg-secondary-container/30 px-1 rounded text-[10px] font-bold">PNL</span>
+<span class="text-[#4CAF50] font-bold text-data-mono">+12.8%</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-2 hover:bg-surface-container-high rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-bold text-primary w-4 text-center">3</span>
+<div>
+<div class="text-body-sm font-bold">Anh Tuấn</div>
+<div class="text-[10px] text-on-surface-variant">290 Người sao chép</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-secondary bg-secondary-container/30 px-1 rounded text-[10px] font-bold">PNL</span>
+<span class="text-[#4CAF50] font-bold text-data-mono">+10.2%</span>
+</div>
+</div>
+<button class="w-full text-center text-secondary text-body-sm font-semibold py-2 hover:underline">Chiến lược</button>
+</div>
+</div></div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chi Tiết Chiến Lược - ProTrade Social</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#0b1c30",
+            "on-background": "#0b1c30",
+            "tertiary": "#000102",
+            "secondary": "#006e1c",
+            "surface-tint": "#5d5e61",
+            "surface-container": "#e5eeff",
+            "primary-container": "#1a1c1e",
+            "primary-fixed": "#e2e2e5",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#78dc77",
+            "on-tertiary-fixed-variant": "#00497d",
+            "on-tertiary-fixed": "#001d36",
+            "background": "#f8f9ff",
+            "surface-container-high": "#dce9ff",
+            "outline-variant": "#c5c6ca",
+            "tertiary-fixed": "#d1e4ff",
+            "on-primary-fixed": "#1a1c1e",
+            "inverse-surface": "#213145",
+            "tertiary-container": "#001d36",
+            "on-surface-variant": "#44474a",
+            "outline": "#75777a",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#d3e4fe",
+            "on-primary-fixed-variant": "#454749",
+            "inverse-primary": "#c6c6c9",
+            "on-tertiary-container": "#0088e2",
+            "secondary-container": "#91f78e",
+            "surface": "#f8f9ff",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#005313",
+            "on-secondary-fixed": "#002204",
+            "surface-container-low": "#eff4ff",
+            "surface-variant": "#d3e4fe",
+            "surface-bright": "#f8f9ff",
+            "surface-dim": "#cbdbf5",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#9ecaff",
+            "on-tertiary": "#ffffff",
+            "primary": "#000101",
+            "inverse-on-surface": "#eaf1ff",
+            "on-secondary-container": "#00731e",
+            "secondary-fixed": "#94f990",
+            "primary-fixed-dim": "#c6c6c9",
+            "on-primary-container": "#838486",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px",
+            "custom": "8px"
+          },
+          "fontFamily": {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="scrollbar-styling">
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c5c6ca;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #75777a;
+    }
+  </style>
+</head>
+<body class="bg-slate-900/50 font-sans h-screen flex items-center justify-center p-4">
+<!-- BEGIN: Strategy Detail Modal -->
+<main class="bg-surface w-full max-w-[1600px] h-full max-h-[900px] rounded-custom shadow-2xl flex flex-col overflow-hidden border border-slate-200">
+<!-- BEGIN: Modal Header (Fixed at top) -->
+<header class="h-16 px-6 flex shrink-0 items-center justify-between border-b border-slate-200 bg-white z-10">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-bold text-on-surface">Chi tiết Chiến lược: "gút gút"</h1>
+<span class="bg-green-100 text-green-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">Đang hoạt động</span>
+<div class="h-6 w-[1px] bg-slate-300 mx-2"></div>
+<div class="flex items-center gap-2">
+<img alt="Creator Avatar" class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD0CCasFnPx-fkm552E3BINciW2-AXL8NjMGUtmoHhNhLrDlSlcS9PXJvMTOnTLfa0hCIH1lNQ-nUyXAPTGMDew7xjfhG3mF83TFVKA0xXno_x9UYf6XxHnTpadCoAyoNL3_ISxeP5tz8uHTLJhNyh244c4xkaB6Xiw0iGSpjdHJBK6tZUZ15gy6cVpVGAnnwWn30cnb66ioJH_UsBsBZdeYsnJkKKd8oignpx9meaHzJKwHo5LtbBCA7sTSLJpuN8w7WhlyEcBuQo"/>
+<span class="text-sm font-medium text-slate-700">Nguyễn Văn A</span>
+<div class="flex items-center gap-1 text-amber-400">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="text-xs font-semibold text-slate-700">4.8</span>
+<span class="text-xs text-slate-500">(120)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 text-sm font-semibold text-slate-700 border border-slate-300 rounded-custom hover:bg-slate-50 transition-colors">
+          So sánh
+        </button>
+<button class="px-4 py-2 text-sm font-semibold text-blue-600 border border-blue-600 rounded-custom hover:bg-blue-50 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+          Theo dõi
+        </button>
+<button class="px-6 py-2 text-sm font-semibold text-white bg-blue-600 rounded-custom hover:bg-blue-700 transition-colors">
+          Sao chép Chiến lược
+        </button>
+<button class="p-2 text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</header>
+<!-- END: Modal Header -->
+<!-- Unified Scroll Container -->
+<div class="flex-1 overflow-y-auto bg-slate-50">
+<div class="flex min-h-full bg-white">
+<!-- BEGIN: Left Column (65%) -->
+<section class="w-[65%] flex flex-col gap-6 p-6 border-r border-slate-200">
+<!-- Cumulative Profit -->
+<article class="bg-white p-6 rounded-custom border border-slate-200 shadow-sm">
+<h3 class="text-sm font-bold text-slate-700 mb-4 uppercase tracking-wider">Lợi nhuận tích luỹ</h3>
+<div class="h-64 w-full flex flex-col">
+<!-- Chart implementation simplified for demo -->
+<div class="flex-1 relative border-b border-l border-slate-200">
+<!-- Y-axis -->
+<div class="absolute -left-8 top-0 bottom-0 flex flex-col justify-between text-[10px] text-slate-400">
+<span>60%</span><span>40%</span><span>20%</span><span>0%</span>
+</div>
+<!-- Grid -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="w-full border-t border-slate-100 h-1/3"></div>
+<div class="w-full border-t border-slate-100 h-1/3"></div>
+<div class="w-full border-t border-slate-100 h-1/3"></div>
+</div>
+<!-- Line representations (simplified) -->
+<svg class="absolute inset-0 h-full w-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,80 Q10,75 20,60 T40,40 T60,20 T80,30 T100,10" fill="none" stroke="#3b82f6" stroke-width="2"></path>
+<path d="M0,90 Q10,85 20,70 T40,50 T60,40 T80,50 T100,30" fill="none" stroke="#10b981" stroke-width="2"></path>
+</svg>
+</div>
+<!-- X-axis -->
+<div class="flex justify-between text-[10px] text-slate-400 mt-2">
+<span>Tháng 1</span><span>Tháng 3</span><span>Tháng 6</span><span>Tháng 9</span><span>Tháng 12</span>
+</div>
+<!-- Legend -->
+<div class="flex justify-center gap-4 mt-4 text-xs text-slate-600">
+<div class="flex items-center gap-1"><span class="w-3 h-1 bg-blue-500 rounded-full"></span> Chiến lược</div>
+<div class="flex items-center gap-1"><span class="w-3 h-1 bg-emerald-500 rounded-full"></span> VN-Index</div>
+</div>
+</div>
+</article>
+<!-- Monthly Performance Heatmap -->
+<article class="bg-white p-6 rounded-custom border border-slate-200 shadow-sm">
+<h3 class="text-sm font-bold text-slate-700 mb-4 uppercase tracking-wider">Lợi nhuận theo tháng (%)</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-xs text-center border-collapse">
+<thead>
+<tr class="text-slate-500 border-b border-slate-200">
+<th class="p-2 font-medium">Năm</th>
+<th class="p-2 font-medium">T1</th><th class="p-2 font-medium">T2</th><th class="p-2 font-medium">T3</th>
+<th class="p-2 font-medium">T4</th><th class="p-2 font-medium">T5</th><th class="p-2 font-medium">T6</th>
+<th class="p-2 font-medium">T7</th><th class="p-2 font-medium">T8</th><th class="p-2 font-medium">T9</th>
+<th class="p-2 font-medium">T10</th><th class="p-2 font-medium">T11</th><th class="p-2 font-medium">T12</th>
+<th class="p-2 font-bold">YTD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-slate-100">
+<td class="p-2 font-medium text-slate-700">2024</td>
+<td class="p-2 bg-emerald-100 text-emerald-700 font-semibold">2.4%</td>
+<td class="p-2 bg-red-100 text-red-700 font-semibold">-1.2%</td>
+<td class="p-2 bg-emerald-200 text-emerald-800 font-semibold">5.1%</td>
+<td class="p-2 bg-emerald-100 text-emerald-700 font-semibold">1.8%</td>
+<td class="p-2 bg-emerald-50 text-emerald-600 font-semibold">0.5%</td>
+<td class="p-2 bg-red-50 text-red-600 font-semibold">-0.3%</td>
+<td class="p-2 text-slate-400">-</td><td class="p-2 text-slate-400">-</td><td class="p-2 text-slate-400">-</td>
+<td class="p-2 text-slate-400">-</td><td class="p-2 text-slate-400">-</td><td class="p-2 text-slate-400">-</td>
+<td class="p-2 font-bold text-emerald-700">8.3%</td>
+</tr>
+<tr class="border-b border-slate-100">
+<td class="p-2 font-medium text-slate-700">2023</td>
+<td class="p-2 bg-emerald-300 text-emerald-900 font-semibold">8.2%</td>
+<td class="p-2 bg-emerald-100 text-emerald-700 font-semibold">2.1%</td>
+<td class="p-2 bg-red-200 text-red-800 font-semibold">-3.4%</td>
+<td class="p-2 bg-emerald-200 text-emerald-800 font-semibold">4.5%</td>
+<td class="p-2 bg-red-100 text-red-700 font-semibold">-1.8%</td>
+<td class="p-2 bg-emerald-100 text-emerald-700 font-semibold">3.2%</td>
+<td class="p-2 bg-emerald-200 text-emerald-800 font-semibold">5.6%</td>
+<td class="p-2 bg-red-100 text-red-700 font-semibold">-2.1%</td>
+<td class="p-2 bg-emerald-50 text-emerald-600 font-semibold">0.8%</td>
+<td class="p-2 bg-red-50 text-red-600 font-semibold">-0.5%</td>
+<td class="p-2 bg-emerald-300 text-emerald-900 font-semibold">7.1%</td>
+<td class="p-2 bg-emerald-100 text-emerald-700 font-semibold">1.2%</td>
+<td class="p-2 font-bold text-emerald-700">24.9%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+<!-- Volatility Analysis -->
+<article class="bg-white p-6 rounded-custom border border-slate-200 shadow-sm">
+<h3 class="text-sm font-bold text-slate-700 mb-4 uppercase tracking-wider">Phân tích biến động &amp; VaR</h3>
+<div class="grid grid-cols-3 gap-6 mb-6">
+<div class="bg-slate-50 p-4 rounded-custom border border-slate-100">
+<div class="text-xs text-slate-500 mb-1">Độ lệch chuẩn (Annual)</div>
+<div class="text-lg font-bold text-slate-800">12.4%</div>
+</div>
+<div class="bg-slate-50 p-4 rounded-custom border border-slate-100">
+<div class="text-xs text-slate-500 mb-1">Max Drawdown</div>
+<div class="text-lg font-bold text-red-600">-15.2%</div>
+</div>
+<div class="bg-slate-50 p-4 rounded-custom border border-slate-100">
+<div class="text-xs text-slate-500 mb-1">VaR (95%, 1 Day)</div>
+<div class="text-lg font-bold text-amber-600">-2.1%</div>
+</div>
+</div>
+<div class="h-48 w-full bg-slate-50 rounded border border-slate-100 flex items-center justify-center text-slate-400 text-sm">
+<!-- Simplified Chart Area -->
+<div class="w-full h-full p-4 flex flex-col">
+<div class="flex-1 border-b border-l border-slate-300 relative">
+<div class="absolute bottom-1/4 left-0 w-full border-t border-dashed border-red-300"></div>
+<div class="absolute bottom-1/2 left-0 w-full border-t border-dashed border-slate-200"></div>
+<div class="absolute bottom-3/4 left-0 w-full border-t border-dashed border-slate-200"></div>
+<!-- Simulated distribution bars -->
+<div class="absolute bottom-0 left-[10%] w-[5%] h-[10%] bg-blue-200"></div>
+<div class="absolute bottom-0 left-[20%] w-[5%] h-[30%] bg-blue-300"></div>
+<div class="absolute bottom-0 left-[30%] w-[5%] h-[60%] bg-blue-400"></div>
+<div class="absolute bottom-0 left-[40%] w-[5%] h-[90%] bg-blue-500"></div>
+<div class="absolute bottom-0 left-[50%] w-[5%] h-[100%] bg-blue-600"></div>
+<div class="absolute bottom-0 left-[60%] w-[5%] h-[80%] bg-blue-500"></div>
+<div class="absolute bottom-0 left-[70%] w-[5%] h-[50%] bg-blue-400"></div>
+<div class="absolute bottom-0 left-[80%] w-[5%] h-[20%] bg-blue-300"></div>
+<div class="absolute bottom-0 left-[90%] w-[5%] h-[5%] bg-blue-200"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Transaction History Table -->
+<article class="bg-white rounded-custom border border-slate-200 shadow-sm overflow-hidden p-6">
+<div class="">
+<!-- Left: Transaction History Table -->
+<div class="flex-1">
+<div class="pb-4 border-b border-slate-200 flex justify-between items-center mb-4">
+<h3 class="text-sm font-bold text-slate-700 uppercase tracking-wider">Lịch sử giao dịch</h3>
+<div class="flex items-center gap-2 text-xs text-slate-600 bg-slate-100 px-3 py-1.5 rounded">
+<span>Từ</span>
+<span class="text-slate-800 font-medium">12/5/2025</span>
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>đến</span>
+<span class="text-slate-800 font-medium">12/5/2026</span>
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-slate-600">
+<thead class="text-slate-500 border-b border-slate-200 text-xs">
+<tr>
+<th class="pb-3 font-medium">Mã</th>
+<th class="pb-3 font-medium text-center">Giá vốn</th>
+<th class="pb-3 font-medium text-center">Giá bán</th>
+<th class="pb-3 font-medium text-center">Lãi (%)</th>
+<th class="pb-3 font-medium text-right">TG bán</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50 py-2">
+<td class="py-3 font-medium text-slate-800">HDG</td>
+<td class="py-3 text-center">21,760</td>
+<td class="py-3 text-center">27,265</td>
+<td class="py-3 text-center text-emerald-600 font-medium">+25.3%</td>
+<td class="py-3 text-right text-slate-500">03/03/2026</td>
+</tr>
+<tr class="hover:bg-slate-50 py-2">
+<td class="py-3 font-medium text-slate-800">HDG</td>
+<td class="py-3 text-center">21,760</td>
+<td class="py-3 text-center">27,265</td>
+<td class="py-3 text-center text-emerald-600 font-medium">+25.3%</td>
+<td class="py-3 text-right text-slate-500">03/03/2026</td>
+</tr>
+<tr class="hover:bg-slate-50 py-2">
+<td class="py-3 font-medium text-slate-800">HDG</td>
+<td class="py-3 text-center">21,760</td>
+<td class="py-3 text-center">26,765</td>
+<td class="py-3 text-center text-emerald-600 font-medium">+23.0%</td>
+<td class="py-3 text-right text-slate-500">03/03/2026</td>
+</tr>
+<tr class="hover:bg-slate-50 py-2">
+<td class="py-3 font-medium text-slate-800">HDG</td>
+<td class="py-3 text-center">21,760</td>
+<td class="py-3 text-center">27,015</td>
+<td class="py-3 text-center text-emerald-600 font-medium">+24.1%</td>
+<td class="py-3 text-right text-slate-500">03/03/2026</td>
+</tr>
+<tr class="hover:bg-slate-50 py-2">
+<td class="py-3 font-medium text-slate-800">SHB</td>
+<td class="py-3 text-center">11,065</td>
+<td class="py-3 text-center">14,880</td>
+<td class="py-3 text-center text-emerald-600 font-medium">+34.5%</td>
+<td class="py-3 text-right text-slate-500">03/03/2026</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right: Profit/Loss Statistics -->
+</div>
+</article>
+<!-- Copy Trader Stats & Graph -->
+<article class="bg-white p-6 rounded-custom border border-slate-200 shadow-sm">
+<h3 class="text-sm font-bold text-slate-700 mb-4 uppercase tracking-wider">Thống kê Sao chép</h3>
+<div class="bg-slate-50 border border-slate-200 rounded-custom overflow-hidden flex flex-col p-6">
+<h4 class="text-sm font-medium text-slate-800 mb-6">Thống kê số lượng sao chép</h4>
+<div class="flex items-center gap-4 mb-6 text-xs">
+<div class="flex items-center gap-2 text-slate-600">
+<span class="w-2 h-2 rounded-full bg-cyan-500"></span> Số người sao chép
+            </div>
+<div class="flex items-center gap-2 text-slate-600">
+<span class="w-2 h-2 rounded-full bg-purple-500"></span> Giá trị sao chép
+            </div>
+<div class="ml-auto flex gap-2 text-slate-500">
+<span class="hover:text-slate-800 cursor-pointer">1M</span>
+<span class="hover:text-slate-800 cursor-pointer">3M</span>
+<span class="hover:text-slate-800 cursor-pointer">6M</span>
+<span class="text-blue-600 font-medium">1Y</span>
+</div>
+</div>
+<!-- Chart Area -->
+<div class="h-48 relative border-b border-slate-200 mb-6">
+<svg class="absolute inset-0 h-full w-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,70 Q10,70 20,65 T40,50 T60,60 T80,70 T100,75" fill="none" stroke="#06b6d4" stroke-width="1.5"></path>
+<path d="M0,80 Q10,80 20,75 T40,60 T60,70 T80,80 T100,85" fill="none" stroke="#a855f7" stroke-width="1.5"></path>
+</svg>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-6 gap-2">
+<div class="bg-white border border-slate-100 p-3 rounded text-center flex flex-col items-center justify-center shadow-sm">
+<div class="w-8 h-8 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[16px]">group</span>
+</div>
+<div class="text-slate-800 font-bold text-sm">26.8tr</div>
+<div class="text-[10px] text-slate-500 mt-1">Tổng tiền sao chép</div>
+</div>
+<div class="bg-white border border-slate-100 p-3 rounded text-center flex flex-col items-center justify-center shadow-sm">
+<div class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+</div>
+<div class="text-slate-800 font-bold text-sm">503 ngày</div>
+<div class="text-[10px] text-slate-500 mt-1">Thời gian sao chép</div>
+</div>
+<div class="bg-white border border-slate-100 p-3 rounded text-center flex flex-col items-center justify-center shadow-sm">
+<div class="w-8 h-8 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+</div>
+<div class="text-slate-800 font-bold text-sm">-47,872.0tr</div>
+<div class="text-[10px] text-slate-500 mt-1">Lãi/Lỗ NĐT sao chép</div>
+</div>
+<div class="bg-white border border-slate-100 p-3 rounded text-center flex flex-col items-center justify-center shadow-sm">
+<div class="w-8 h-8 rounded-full bg-pink-50 text-pink-500 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[16px]">percent</span>
+</div>
+<div class="text-slate-800 font-bold text-sm">-8.1%/Tháng</div>
+<div class="text-[10px] text-slate-500 mt-1">Lãi/Lỗ ròng (Tháng)</div>
+</div>
+<div class="bg-white border border-slate-100 p-3 rounded text-center flex flex-col items-center justify-center shadow-sm">
+<div class="w-8 h-8 rounded-full bg-purple-50 text-purple-500 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+</div>
+<div class="text-slate-800 font-bold text-sm">95.3%</div>
+<div class="text-[10px] text-slate-500 mt-1">Tỷ lệ thắng</div>
+</div>
+<div class="bg-white border border-slate-100 p-3 rounded text-center flex flex-col items-center justify-center shadow-sm">
+<div class="w-8 h-8 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+</div>
+<div class="text-slate-800 font-bold text-sm">0.2%</div>
+<div class="text-[10px] text-slate-500 mt-1">Chênh lệch giá khớp</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- END: Left Column -->
+<!-- BEGIN: Right Column (35%) -->
+<aside class="w-[35%] flex flex-col gap-6 p-6">
+<!-- 1. Strategy Description -->
+<section class="bg-white p-6 rounded-custom border border-slate-200 shadow-sm" data-purpose="widget-description">
+<h3 class="text-sm font-bold text-slate-700 mb-4 uppercase tracking-wider">Tóm tắt Chiến lược</h3>
+<p class="text-sm text-slate-600 leading-relaxed">
+Chiến lược đầu tư "gút gút" áp dụng cách tiếp cận đa dạng với trọng tâm là các chỉ số tăng trưởng và khả năng sinh lợi. Bằng cách tận dụng các chỉ số như tăng trưởng lợi nhuận năm này qua năm khác, biên lợi nhuận và tỷ suất sinh lợi trên vốn chủ sở hữu, chiến lược ưu tiên các công ty thể hiện hiệu suất vững mạnh và hiệu quả hoạt động. Nó sử dụng một danh mục 5 cổ phiếu từ chỉ số VN30 với tần suất cân bằng hàng tuần để duy trì sự tiếp xúc tối ưu. Phương pháp này nhằm tăng cường lợi nhuận đồng thời quản lý độ biến động và rủi ro, khiến nó phù hợp với bối cảnh thị trường hiện tại, nơi các công ty có khả năng sinh lợi mạnh mẽ được ưu ái trong bối cảnh nền kinh tế biến động.
+</p>
+</section>
+<!-- 2. Performance Indicators -->
+<section class="bg-white p-6 rounded-custom border border-slate-200 shadow-sm" data-purpose="widget-indicators">
+<h3 class="text-sm font-bold text-slate-700 mb-4 uppercase tracking-wider">Chỉ số Hiệu suất</h3>
+<div class="w-full flex flex-col mt-4">
+<div class="flex justify-between items-center mb-6">
+<span class="text-xs font-semibold text-slate-700">Lợi nhuận hàng quý</span>
+<div class="flex gap-3 text-[10px] text-slate-500">
+<div class="flex items-center gap-1"><span class="w-2 h-2 bg-blue-400 rounded-sm"></span>Q1</div>
+<div class="flex items-center gap-1"><span class="w-2 h-2 bg-indigo-500 rounded-sm"></span>Q2</div>
+<div class="flex items-center gap-1"><span class="w-2 h-2 bg-blue-800 rounded-sm"></span>Q3</div>
+<div class="flex items-center gap-1"><span class="w-2 h-2 bg-teal-400 rounded-sm"></span>Q4</div>
+</div>
+</div>
+<div class="relative h-48 w-full border-b border-l border-slate-200 flex items-end justify-around pt-4 pb-0 pl-2">
+<!-- Y axis labels -->
+<div class="absolute left-[-30px] top-0 bottom-0 flex flex-col justify-between text-[10px] text-slate-400 py-1">
+<span>50%</span>
+<span>40%</span>
+<span>30%</span>
+<span>20%</span>
+<span>10%</span>
+<span>0%</span>
+<span>-10%</span>
+<span>-20%</span>
+</div>
+<!-- Grid lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none border-t border-slate-100">
+<div class="w-full h-[1px] bg-slate-100"></div>
+<div class="w-full h-[1px] bg-slate-100"></div>
+<div class="w-full h-[1px] bg-slate-100"></div>
+<div class="w-full h-[1px] bg-slate-100"></div>
+<div class="w-full h-[1px] bg-slate-100"></div>
+<div class="w-full h-[1px] bg-slate-300"></div>
+<div class="w-full h-[1px] bg-slate-100"></div>
+<div class="w-full h-[1px] bg-slate-100"></div>
+</div>
+<!-- 2020 -->
+<div class="flex items-end gap-[2px] h-full relative z-10 w-full justify-center group">
+<div class="w-3 bg-blue-400 h-[10%]" title="Q1"></div>
+<div class="w-3 bg-indigo-500 h-[20%]" title="Q2"></div>
+<div class="w-3 bg-blue-800 h-[30%]" title="Q3"></div>
+<div class="w-3 bg-teal-400 h-[15%]" title="Q4"></div>
+<span class="absolute -bottom-6 text-[10px] text-slate-500">2020</span>
+</div>
+<!-- 2021 -->
+<div class="flex items-end gap-[2px] h-full relative z-10 w-full justify-center group">
+<div class="w-3 bg-blue-400 h-[45%]" title="Q1"></div>
+<div class="w-3 bg-indigo-500 h-[15%]" title="Q2"></div>
+<div class="w-3 bg-blue-800 h-[10%]" title="Q3"></div>
+<div class="w-3 bg-teal-400 h-[35%]" title="Q4"></div>
+<span class="absolute -bottom-6 text-[10px] text-slate-500">2021</span>
+</div>
+<!-- 2022 -->
+<div class="flex items-end gap-[2px] h-full relative z-10 w-full justify-center group">
+<div class="w-3 bg-blue-400 h-[5%]" title="Q1"></div>
+<div class="w-3 bg-indigo-500 h-[10%] transform translate-y-[20%]" title="Q2 (negative)"></div>
+<div class="w-3 bg-blue-800 h-[5%] transform translate-y-[10%]" title="Q3 (negative)"></div>
+<div class="w-3 bg-teal-400 h-[25%]" title="Q4"></div>
+<span class="absolute -bottom-6 text-[10px] text-slate-500">2022</span>
+</div>
+<!-- 2023 -->
+<div class="flex items-end gap-[2px] h-full relative z-10 w-full justify-center group">
+<div class="w-3 bg-blue-400 h-[15%]" title="Q1"></div>
+<div class="w-3 bg-indigo-500 h-[5%]" title="Q2"></div>
+<div class="w-3 bg-blue-800 h-[20%]" title="Q3"></div>
+<div class="w-3 bg-teal-400 h-[10%]" title="Q4"></div>
+<span class="absolute -bottom-6 text-[10px] text-slate-500">2023</span>
+</div>
+<!-- 2024 -->
+<div class="flex items-end gap-[2px] h-full relative z-10 w-full justify-center group">
+<div class="w-3 bg-blue-400 h-[10%]" title="Q1"></div>
+<div class="w-3 bg-indigo-500 h-[25%]" title="Q2"></div>
+<div class="w-3 bg-blue-800 h-[5%]" title="Q3"></div>
+<div class="w-3 bg-teal-400 h-[15%]" title="Q4"></div>
+<span class="absolute -bottom-6 text-[10px] text-slate-500">2024</span>
+</div>
+<!-- 2025 -->
+<div class="flex items-end gap-[2px] h-full relative z-10 w-full justify-center group">
+<div class="w-3 bg-blue-400 h-[15%]" title="Q1"></div>
+<div class="w-3 bg-indigo-500 h-[30%]" title="Q2"></div>
+<div class="w-3 bg-blue-800 h-[10%]" title="Q3"></div>
+<div class="w-3 bg-teal-400 h-[5%]" title="Q4"></div>
+<span class="absolute -bottom-6 text-[10px] text-slate-500">2025</span>
+</div>
+<!-- 2026 -->
+<div class="flex items-end gap-[2px] h-full relative z-10 w-full justify-center group">
+<div class="w-3 bg-blue-400 h-[5%]" title="Q1"></div>
+<div class="w-3 bg-indigo-500 h-[0%]" title="Q2"></div>
+<div class="w-3 bg-blue-800 h-[0%]" title="Q3"></div>
+<div class="w-3 bg-teal-400 h-[0%]" title="Q4"></div>
+<span class="absolute -bottom-6 text-[10px] text-slate-500">2026</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Asset Allocation -->
+<section class="bg-white p-6 rounded-custom border border-slate-200 shadow-sm" data-purpose="widget-allocation">
+<h3 class="text-sm font-bold text-slate-700 mb-4 uppercase tracking-wider">Phân bổ tài sản</h3>
+<div class="flex items-center justify-between mt-4">
+<div class="relative w-32 h-32 flex-shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- HPG 15.25% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#3b82f6" stroke-dasharray="47.9 314.16" stroke-dashoffset="0" stroke-width="20"></circle>
+<!-- VCB 12.5% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#ef4444" stroke-dasharray="39.27 314.16" stroke-dashoffset="-47.9" stroke-width="20"></circle>
+<!-- VIC 10.65% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#f59e0b" stroke-dasharray="33.45 314.16" stroke-dashoffset="-87.17" stroke-width="20"></circle>
+<!-- FPT 9.8% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#10b981" stroke-dasharray="30.78 314.16" stroke-dashoffset="-120.62" stroke-width="20"></circle>
+<!-- VNM 8.08% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#8b5cf6" stroke-dasharray="25.38 314.16" stroke-dashoffset="-151.4" stroke-width="20"></circle>
+<!-- Others 43.72% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#cbd5e1" stroke-dasharray="137.35 314.16" stroke-dashoffset="-176.78" stroke-width="20"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="text-[8px] font-medium text-slate-500 uppercase">Tỷ trọng lớn nhất</span>
+<span class="text-sm font-bold text-slate-800">HPG</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-x-4 gap-y-3 flex-1 ml-6 text-xs">
+<div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="w-1 h-3 bg-blue-500"></span><span class="font-medium text-slate-600">HPG</span></div><span class="font-bold text-slate-800">15.25%</span></div>
+<div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="w-1 h-3 bg-red-500"></span><span class="font-medium text-slate-600">VCB</span></div><span class="font-bold text-slate-800">12.5%</span></div>
+<div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="w-1 h-3 bg-amber-500"></span><span class="font-medium text-slate-600">VIC</span></div><span class="font-bold text-slate-800">10.65%</span></div>
+<div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="w-1 h-3 bg-emerald-500"></span><span class="font-medium text-slate-600">FPT</span></div><span class="font-bold text-slate-800">9.8%</span></div>
+<div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="w-1 h-3 bg-purple-500"></span><span class="font-medium text-slate-600">VNM</span></div><span class="font-bold text-slate-800">8.08%</span></div>
+<div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="w-1 h-3 bg-slate-300"></span><span class="font-medium text-slate-600">Khác</span></div><span class="font-bold text-slate-800">18.31%</span></div>
+</div>
+</div>
+</section>
+<section class="bg-white p-6 rounded-custom border border-slate-200 shadow-sm" data-purpose="widget-pnl-stats">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-sm font-bold text-slate-700 uppercase tracking-wider">Thống kê lãi lỗ</h3>
+<div class="text-xs text-slate-600 bg-white border border-slate-200 px-2 py-1 rounded flex items-center gap-1 cursor-pointer hover:bg-slate-50">
+           Tháng 04/2026 <span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Win -->
+<div class="flex flex-col gap-3 border-r border-slate-200 pr-4">
+<div class="text-xs font-semibold text-slate-600 bg-slate-50 p-2 rounded">CP lãi nhiều nhất</div>
+<div class="flex justify-between items-center text-sm"><span class="font-bold text-slate-800">HSG</span><span class="text-emerald-600 font-medium">+0.8%</span></div>
+<div class="flex justify-between items-center text-sm"><span class="font-bold text-slate-800">HPG</span><span class="text-emerald-600 font-medium">+0.4%</span></div>
+<div class="flex justify-between items-center text-sm"><span class="font-bold text-slate-800">FPT</span><span class="text-emerald-600 font-medium">+0.1%</span></div>
+<div class="text-xs font-semibold text-slate-600 bg-slate-50 p-2 rounded mt-2">Ngành lãi nhiều nhất</div>
+<div class="flex justify-between items-center text-sm"><span class="font-medium text-slate-700">Tài nguyên Cơ bản</span><span class="text-emerald-600 font-medium">+1.2%</span></div>
+<div class="flex justify-between items-center text-sm"><span class="font-medium text-slate-700">Công nghệ Thông tin</span><span class="text-emerald-600 font-medium">+0.1%</span></div>
+</div>
+<!-- Loss -->
+<div class="flex flex-col gap-3">
+<div class="text-xs font-semibold text-slate-600 bg-slate-50 p-2 rounded">CP lỗ nhiều nhất</div>
+<div class="flex justify-between items-center text-sm"><span class="font-bold text-slate-800">SHB</span><span class="text-red-600 font-medium">-2.3%</span></div>
+<div class="flex justify-between items-center text-sm"><span class="font-bold text-slate-800">HDG</span><span class="text-red-600 font-medium">-1.4%</span></div>
+<div class="text-xs font-semibold text-slate-600 bg-slate-50 p-2 rounded mt-[38px]">Ngành lỗ nhiều nhất</div>
+<div class="flex justify-between items-center text-sm"><span class="font-medium text-slate-700">Ngân hàng</span><span class="text-red-600 font-medium">-2.3%</span></div>
+<div class="flex justify-between items-center text-sm"><span class="font-medium text-slate-700">Bất động sản</span><span class="text-red-600 font-medium">-1.4%</span></div>
+</div>
+</div>
+</section></aside>
+<!-- END: Right Column -->
+</div>
+</div>
+</main>
+<!-- END: Strategy Detail Modal -->
+</body></html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TradeCore - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#00497d",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#002204",
+                    "on-primary-fixed-variant": "#454749",
+                    "on-background": "#0b1c30",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#000101",
+                    "outline-variant": "#c5c6ca",
+                    "surface-variant": "#d3e4fe",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#1a1c1e",
+                    "tertiary-fixed": "#d1e4ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-container": "#0088e2",
+                    "on-secondary-fixed-variant": "#005313",
+                    "background": "#f8f9ff",
+                    "secondary-fixed-dim": "#78dc77",
+                    "surface-container-high": "#dce9ff",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-low": "#eff4ff",
+                    "primary-fixed": "#e2e2e5",
+                    "secondary-container": "#91f78e",
+                    "primary-fixed-dim": "#c6c6c9",
+                    "secondary-fixed": "#94f990",
+                    "inverse-primary": "#c6c6c9",
+                    "on-primary-fixed": "#1a1c1e",
+                    "secondary": "#006e1c",
+                    "surface-dim": "#cbdbf5",
+                    "on-surface-variant": "#44474a",
+                    "outline": "#75777a",
+                    "tertiary-container": "#001d36",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#838486",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#5d5e61",
+                    "tertiary": "#000102",
+                    "on-tertiary-fixed": "#001d36",
+                    "on-secondary-container": "#00731e",
+                    "inverse-surface": "#213145",
+                    "on-surface": "#0b1c30",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-container": "#e5eeff",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed-dim": "#9ecaff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "xl": "32px",
+                    "base": "4px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Inter"],
+                    "data-mono": ["JetBrains Mono"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "title-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 h-full w-64 border-r border-outline-variant bg-surface dark:bg-surface-container flex flex-col h-screen p-4 z-50">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[20px]" data-icon="terminal">terminal</span>
+</div>
+<div>
+<h1 class="text-title-sm font-headline-md text-on-surface dark:text-on-primary-fixed">TradeCore</h1>
+<p class="text-label-caps font-label-caps text-on-surface-variant opacity-70">Pro Terminal</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="text-body-sm font-body-sm">Platform</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="face">face</span>
+<span class="text-body-sm font-body-sm">Agent</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="text-body-sm font-body-sm">Research</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+<span class="text-body-sm font-body-sm">Stocks</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="text-body-sm font-body-sm">Market</span>
+</a>
+<div class="pt-4">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-body-sm font-body-sm">AI Ranking</span>
+</a>
+<div class="ml-4 pl-4 border-l border-outline-variant space-y-1 mt-1">
+<a class="block py-2 text-on-surface-variant hover:text-on-surface text-body-sm" href="#">Strategy Ideas</a>
+<a class="block py-2 px-3 rounded-lg text-on-surface text-body-sm text-on-surface-variant" href="#">Social Feed</a>
+<a class="block py-2 px-3 rounded-lg hover:text-on-surface text-body-sm bg-[#bdf094] font-medium" href="#">Profile</a>
+</div>
+</div>
+</div>
+</nav>
+<div class="mt-auto pt-4 border-t border-outline-variant space-y-1">
+<div class="pt-4 border-t border-outline-variant space-y-1">
+<button class="w-full mb-4 py-3 px-4 bg-black text-white rounded-lg font-bold text-body-sm">Upgrade to Pro</button>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-body-sm font-body-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg px-3 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-body-sm font-body-sm">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-surface-bright dark:bg-surface-container-low border-b border-outline-variant flex justify-between items-center px-lg z-40">
+<div class="flex gap-8 items-center h-full">
+<a class="text-on-surface-variant pb-4 font-medium transition-colors hover:text-secondary" href="#">Strategy</a>
+<a class="text-on-surface-variant pb-4 font-medium transition-colors hover:text-secondary" href="#">Social Feed</a>
+<a class="text-secondary border-b-2 border-secondary pb-4 font-bold text-on-surface-variant font-medium transition-colors hover:text-secondary" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-1.5 bg-surface-container border border-outline-variant rounded-full text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Search strategy or users..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-secondary-container px-3 py-1 rounded-full text-on-secondary-container">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<span class="text-label-caps">Market Open</span>
+</div>
+<button class="bg-primary text-on-primary px-4 py-1.5 rounded-lg text-label-caps font-bold">Create Post</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="User Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlwD9DeM9Smp4nSbRiY43LhVmegiS5hRC0Ud1DvW2QFn8-0_oC78HBHtBfG7IqPr4cC6T49vwWzkuo7r-CDj6_t8fLEEarERGG9Vo7gmW5Ce68DtZ0AglPp6YyIuNaKblDEeWe1wf-tVuEsVkEans8Ze74bC4MmQZVpLBFk2dpKla8A57_ulCizzMKQnGbUhIehEvcVchGFf6wSFvxSobcqosu8DzshfCDHt60ADMY8Ncyeyc0f3654jqKlJsQJSPZno6hR-OUKycC"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-lg bg-surface min-h-[calc(100vh-64px)]">
+<!-- Profile Header Bento -->
+<section class="grid grid-cols-12 gap-gutter mb-xl">
+<!-- User Info Card -->
+<div class="col-span-8 bg-surface-container-lowest p-xl rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex items-start gap-xl">
+<div class="relative">
+<div class="w-32 h-32 rounded-xl overflow-hidden bg-surface-container-highest">
+<img alt="Alex Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw7Y9it5JAefMo9qWfsjVw7gG6r6rm9rYqAd95OyUL2yfT_GGKqB9yWJ3_-paCUqYkz219VLQexnCQIssfh0HL1LOS_-35bZiBpBOILylkwSQECOv8uAbdPmxdkMawtzelZPj2RAgRQVB6GvaQ24hDGrt2szL7SDeQD-aR8Odh1aSBAMwnOYVpTon3pL1bfmVWkc3b_UZv-cm8Cb4W2fKJAOML9djm74H2dpLV4ffn1PH3WqYxiQjxzMHF68jhe5sIgXB861V8xwzx"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary text-on-secondary p-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Alex Chen</h2>
+<p class="text-body-sm text-on-surface-variant">@alextrades_alpha</p>
+</div>
+<div class="flex gap-2">
+<button class="px-6 py-2 border border-primary text-primary rounded-lg font-bold text-label-caps hover:bg-surface-container transition-colors">Edit Profile</button>
+<button class="p-2 bg-surface-container text-on-surface-variant rounded-lg hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+<p class="mt-4 text-body-md text-on-surface max-w-2xl">Nhà giao dịch định lượng chuyên về các chiến lược tăng trưởng kỹ thuật. Quản lý 4.2 Tỷ VND AUM. Tập trung vào tính minh bạch và phát triển cộng đồng. Chuyên viên phân tích chứng khoán.</p>
+<div class="flex gap-lg mt-6">
+<div class="flex flex-col">
+<span class="text-label-caps text-on-surface-variant">Followers</span>
+<span class="text-title-sm font-bold">12.4K</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps text-on-surface-variant">Following</span>
+<span class="text-title-sm font-bold">482</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps text-on-surface-variant">Win Rate</span>
+<span class="text-title-sm font-bold text-secondary">68.2%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Stats Card -->
+<div class="col-span-4 grid grid-rows-2 gap-gutter">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<span class="text-label-caps text-on-surface-variant">Net Liquid Value</span>
+<h3 class="text-title-sm font-data-mono">842.192.400 VND</h3>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+</div>
+<div>
+<span class="text-label-caps text-on-surface-variant">Monthly P&amp;L</span>
+<h3 class="text-title-sm font-data-mono text-secondary">+42.019.120 VND</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Dashboard Area -->
+<div class="flex gap-8 border-b border-outline-variant mb-lg px-2">
+<a class="pb-3 text-body-md hover:text-on-surface transition-colors relative text-secondary border-b-2 border-secondary font-bold" href="#">
+    Post
+  </a>
+<a class="pb-3 text-body-md relative text-on-surface-variant font-medium" href="#">
+    Portfolio
+  </a>
+</div><div class="space-y-gutter">
+<!-- Post 1 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Alex Chen" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw7Y9it5JAefMo9qWfsjVw7gG6r6rm9rYqAd95OyUL2yfT_GGKqB9yWJ3_-paCUqYkz219VLQexnCQIssfh0HL1LOS_-35bZiBpBOILylkwSQECOv8uAbdPmxdkMawtzelZPj2RAgRQVB6GvaQ24hDGrt2szL7SDeQD-aR8Odh1aSBAMwnOYVpTon3pL1bfmVWkc3b_UZv-cm8Cb4W2fKJAOML9djm74H2dpLV4ffn1PH3WqYxiQjxzMHF68jhe5sIgXB861V8xwzx"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">Alex Chen</span>
+<span class="text-body-sm text-on-surface-variant">@alextrades_alpha • 2h</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span></button>
+</div>
+<p class="mt-2 text-body-md text-on-surface">Vừa cập nhật chiến lược Weekly_Fundamental. Với tình hình vĩ mô hiện tại, tôi đang dịch chuyển tỷ trọng sang nhóm ngành công nghệ và năng lượng. Nhìn chung thị trường vẫn đang trong xu hướng tích lũy tốt.</p>
+<div class="mt-4 p-4 bg-surface-container-low rounded-lg border border-outline-variant">
+<div class="flex justify-between items-center mb-2">
+<span class="text-label-caps font-bold">Weekly_Fundamental Performance</span>
+<span class="text-secondary font-bold">+55.3% YTD</span>
+</div>
+<div class="h-32 bg-surface-bright rounded border border-outline-variant/30 flex items-end p-2">
+<svg class="w-full h-full" viewbox="0 0 400 100">
+<path d="M0,80 L50,70 L100,75 L150,40 L200,60 L250,20 L300,35 L350,10 L400,15" fill="none" stroke="#006e1c" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+<div class="flex gap-6 mt-4">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-label-caps">24</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="repeat">repeat</span>
+<span class="text-label-caps">12</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+<span class="text-label-caps">156</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-colors ml-auto">
+<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Post 2 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Alex Chen" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw7Y9it5JAefMo9qWfsjVw7gG6r6rm9rYqAd95OyUL2yfT_GGKqB9yWJ3_-paCUqYkz219VLQexnCQIssfh0HL1LOS_-35bZiBpBOILylkwSQECOv8uAbdPmxdkMawtzelZPj2RAgRQVB6GvaQ24hDGrt2szL7SDeQD-aR8Odh1aSBAMwnOYVpTon3pL1bfmVWkc3b_UZv-cm8Cb4W2fKJAOML9djm74H2dpLV4ffn1PH3WqYxiQjxzMHF68jhe5sIgXB861V8xwzx"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">Alex Chen</span>
+<span class="text-body-sm text-on-surface-variant">@alextrades_alpha • 5h</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span></button>
+</div>
+<p class="mt-2 text-body-md text-on-surface">Thị trường hôm nay khá biến động nhưng các tín hiệu kỹ thuật từ Momentum_Tech vẫn cho thấy cơ hội mua vào ở các nhịp điều chỉnh. Lưu ý quản trị rủi ro ở mức 5%.</p>
+<div class="flex gap-6 mt-4">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-label-caps">8</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="repeat">repeat</span>
+<span class="text-label-caps">5</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+<span class="text-label-caps">89</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-colors ml-auto">
+<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="ml-64 bg-surface-container-lowest dark:bg-surface-container-low border-t border-outline-variant flex justify-between items-center px-lg py-md w-full">
+<div class="flex items-center gap-6">
+<span class="text-label-caps font-bold text-primary">TradeCore</span>
+<div class="flex gap-4">
+<a class="text-on-surface-variant text-body-sm hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant text-body-sm hover:text-on-surface transition-colors" href="#">Risk Disclosure</a>
+<a class="text-on-surface-variant text-body-sm hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant text-body-sm hover:text-on-surface transition-colors" href="#">Help Center</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="public">public</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<p class="text-body-sm text-on-surface-variant opacity-70">© 2024 TradeCore Inc.</p>
+</div>
+</footer>
+</body></html>
