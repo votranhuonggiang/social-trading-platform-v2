@@ -172,12 +172,16 @@ function Label({ children }: { children: React.ReactNode }) {
 function InlineTabs({
   items,
   active,
+  withBorder = true,
+  className,
 }: {
   items: Array<{ id: string; href: string; label: string }>;
   active: string;
+  withBorder?: boolean;
+  className?: string;
 }) {
   return (
-    <div className="flex flex-wrap gap-6 border-b border-[var(--outline-variant)]">
+    <div className={cx('flex flex-wrap gap-6', withBorder && 'border-b border-[var(--outline-variant)]', className)}>
       {items.map((item) => (
         <Link
           key={item.id}
@@ -1620,10 +1624,16 @@ function StrategyView({
 
   return (
     <div className="space-y-6">
-      <InlineTabs items={tabs} active={strategyTab} />
+      <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[var(--outline-variant)]">
+        <InlineTabs items={tabs} active={strategyTab} withBorder={false} />
+        {strategyTab === 'potential' ? (
+          <InlineTabs items={manageTabs} active={strategyMode} withBorder={false} className="ml-auto gap-5" />
+        ) : strategyTab === 'copied' ? (
+          <InlineTabs items={tradeTabs} active={tradeTab} withBorder={false} className="ml-auto gap-5" />
+        ) : null}
+      </div>
       {strategyTab === 'potential' ? (
         <>
-          <InlineTabs items={manageTabs} active={strategyMode} />
           <SurfaceCard className="p-4">
             <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
               <div>
@@ -1654,7 +1664,6 @@ function StrategyView({
         </>
       ) : strategyTab === 'copied' ? (
         <>
-          <InlineTabs items={tradeTabs} active={tradeTab} />
           {tradeTab === 'mine' ? (
             <>
               <StrategyOverviewCards cards={selfTradingSummaryCards} />
