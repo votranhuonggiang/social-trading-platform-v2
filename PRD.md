@@ -16,9 +16,12 @@ Upgrade the "AI Ranking" module to provide a comprehensive, multi-dimensional vi
    - *Reference*: {{DATA:SCREEN:SCREEN_126}}
 3. **Following View**: User clicks the "Chiến lược đang theo dõi" tab.
    - *Reference*: {{DATA:SCREEN:SCREEN_121}}
-4. **Copied Strategies**: User clicks the "Chiến lược đã copy" tab.
+4. **Trading Workspace**: User clicks the "Giao dịch" tab (renamed from "Chiến lược đã copy").
    - *Reference*: {{DATA:SCREEN:SCREEN_159}}
-5. **Copied Strategy Detail**: User clicks a specific strategy name inside the "Chi tiết các chiến lược đã sao chép" block to open a dedicated copied-strategy popup.
+5. **Trading Sub-tabs**:
+   - `Của tôi`: shows self-trading view (user-managed strategies and allocations).
+   - `Copy Trade`: shows copied-strategy view and copied-capital allocations.
+6. **Copied Strategy Detail**: In `Giao dịch > Copy Trade`, user clicks a specific strategy name inside the "Chi tiết các chiến lược đã sao chép" block to open a dedicated copied-strategy popup.
    - *Behavior*: This modal is separate from the generic strategy detail popup and focuses on the user's copied position.
    - *Reference*: `stitch_strategy_social_hub (1)/stitch_strategy_social_hub/Chi_tiết_chiến_lược_đã_sao_chép_Popup`
 
@@ -34,6 +37,10 @@ Upgrade the "AI Ranking" module to provide a comprehensive, multi-dimensional vi
    - *Reference*: {{DATA:SCREEN:SCREEN_147}}
 5. **Filtering**: User clicks the "Filter" button in the Strategies tab to open the advanced filter settings.
    - *Reference*: {{DATA:SCREEN:SCREEN_103}}
+6. **Trader Profile from Strategy Detail**: In `Social Feed > Strategies`, user opens a strategy detail popup, scrolls down, and clicks `View Trader Profile`.
+   - *Behavior*: Must open the same trader quick-profile popup as `Social Feed > News` (shared modal behavior).
+7. **Copy Entry Modal in Strategies**: In `Social Feed > Strategies`, clicking `Mua để copy/Copy` opens the copy modal.
+   - *Behavior*: CTA and content must remain readable in light theme; confirmation CTA must be high-contrast.
 
 ### Flow C: Detailed Analysis (Pop-up & Profiles)
 
@@ -75,6 +82,13 @@ Upgrade the "AI Ranking" module to provide a comprehensive, multi-dimensional vi
 - **Dual Account Sidebar Summary**: The global left sidebar must expose both `Credit Account` and `Investment Account`, plus their localized VND totals, matching the Profile experience.
 - **Portfolio Strategy Status Drilldown**: In `Profile > Portfolio > Danh sách các chiến lược`, any row with `Selling` status must open a buyer-statistics popup rather than a generic strategy detail popup.
 - **Following Strategies Expansion Flow**: `Profile > Portfolio > Following Strategies` must support `View All` to open a dedicated modal and a secondary `More Detail` CTA that routes to the copied-strategy dashboard.
+- **Strategy Tab Rename and Split**: `Strategy > Chiến lược đã copy` is replaced by `Strategy > Giao dịch`, with two sub-tabs: `Của tôi` and `Copy Trade`.
+- **Managed Strategies Enrichment**: In trader quick-profile popup (`user_profile_popup`), `Managed Strategies` table must include `Sharpe` and upgraded `Status` values (`public-selling`, `public-free`, `private`).
+- **Conditional Drilldown from Managed Strategies**:
+  - Clicking strategy name opens the generic strategy detail popup only when status is `public-selling` or `public-free`.
+  - `private` rows are non-clickable.
+- **Unified Trader Popup Behavior**: `View Trader Profile` inside strategy detail modal (from Social Strategies) must open the same trader popup used in Social News.
+- **Copy Modal Simplification**: In copy modal, remove `Profit share` row and `Cài đặt nâng cao (Không bắt buộc)` block; replace with a strategy-price row using `Price = Sharpe × 1,000,000 VND`.
 
 ## 3. Design Constraints
 
